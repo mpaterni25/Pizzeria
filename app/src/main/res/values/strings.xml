@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">Pizzeria</string>
+    <string name="Opciones">Opciones</string>
+    <string name="Ingredientes">INGREDIENTES</string>
+    <string name="Tamaño">Tamaño</string>
+    <string name="IngredientesPizza">IngredientesPizza</string>
+    <string name="Bebidas">Bebidas</string>
+    <string name="Seleccione_Ingredientes">Seleccione_Ingredientes</string>
+    <string name="Jamon">Jamon</string>
+    <string name="Piña">Piña</string>
+    <string name="QuesoBorde">QuesoBorde</string>
+    <string name="Salami">Salami</string>
+    <string name="Champiñon">Champiñon</string>
+    <string name="Pollo">Pollo</string>
+    <string name="Butifarra">Butifarra</string>
+    <string name="Chorizo">Chorizo</string>
+    <string name="Tocineta">Tocineta</string>
+    <string name="Pepperoni">Pepperoni</string>
+    <string name="Personal">Personal</string>
+    <string name="Pequeña">Pequeña</string>
+    <string name="Mediana">Mediana</string>
+    <string name="Grande">Grande</string>
+    <string name="Jumbo">Jumbo</string>
+    <string name="Precio">Precio</string>
+    <string name="Registrar">Registrar</string>
+    <string name="Limpiar">Limpiar</string>
+    <string name="champiñones">Champiñones</string>
+    <string name="si">SI</string>
+    <string name="no">NO</string>
+    <string name="registrar">Registar</string>
+    <string name="listar">Listar</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="bienvenidos">Bienvenidos</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="pedido">Pedido</string>
+    <string name="error1">Seleccione por lo menos un opcion</string>
+    <string name="error2">Seleccione por lo menos un ingrediente</string>
+    <string name="errorLogin">Usuario o Contraseña Incorrectos</string>
+    <string name="success">Pizza Guardada Satisfactoriamente</string>
+    <string name="modif">Pizza Modificada Satiscatoriamente</string>
+    <string name="confirmacion">Confirmacion</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="pregunta1">¿Está seguro que desea eliminar esta Pizza?</string>
+    <string name="eliminarP">Pizza Eliminada Satisfactoriamente</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="buscar">Buscar</string>
+    <string name="modificar">Modificar</string>
+
+
+    <string-array name="tamaño_spinner">
+        <item>@string/Personal</item>
+        <item>@string/Pequeña</item>
+        <item>@string/Mediana</item>
+        <item>@string/Grande</item>
+        <item>@string/Jumbo</item>
+    </string-array>
+
+    <string-array name="lstOpcion">
+        <item>@string/registrar</item>
+        <item>@string/listar</item>
+    </string-array>
+
+</resources>
