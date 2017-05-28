@@ -19,8 +19,6 @@ public class Pizza
         this.tamaño = tamaño;
         this.ingredientes = ingredientes;
         this.bordequeso = bordequeso;
-
-
     }
 
     public int getPrecio() {return precio;}
@@ -129,8 +127,11 @@ public class Pizza
         db = aux.getWritableDatabase();
 
         //insertar forma 1
-        sql = "UPDATE Personas SET foto='"+this.getFoto()+"', tamaño='"+this.getTamaño()+"', ingredientes='"+this.getIngredientes()+"', "+ "bordedequeso='" +this.getBordequeso()+"'"+ "pedido='" +this.getPedido()+"'"
-                + "precio='" +this.getPrecio()+"'";
+        sql = "UPDATE Pizzas SET precio='"+this.getPrecio()
+                    +"',tamaño='"+this.getTamaño()
+                    +"',ingredientes='"+this.getIngredientes()
+                    +"',bordedequeso='" +this.getBordequeso()
+                    +"'" + "where pedido='" +this.getPedido()+"'";
 
         db.execSQL(sql);
 
@@ -138,7 +139,5 @@ public class Pizza
         db.close();
 
     }
-
-
 
 }

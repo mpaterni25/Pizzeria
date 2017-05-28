@@ -52,6 +52,12 @@ public class Pedido extends AppCompatActivity {
     }
 
     public boolean validarTodo() {
+
+        if (cajapedido.getText().toString().isEmpty()) {
+            cajapedido.setError("Digite la cédula");
+            cajapedido.requestFocus();
+            return false;
+        }
         if ((!rSi.isChecked() && (!rNO.isChecked()))) {
             new AlertDialog.Builder(this).setMessage(getResources().getString(R.string.error1)).setCancelable(true).show();
             return false;
@@ -126,7 +132,7 @@ public class Pedido extends AppCompatActivity {
                 precio += 500;
             }
 
-            p = new Pizza(foto ,pedido, precio, tamaño, ingredientes, bordequeso);
+            p = new Pizza(foto, pedido, precio, tamaño, ingredientes, bordequeso);
             p.guardar(getApplicationContext());
 
             Toast.makeText(getApplicationContext(), getResources().getString(R.string.success),
@@ -172,12 +178,13 @@ public class Pedido extends AppCompatActivity {
         }
         return m;
     }
-    public void eliminar(View v){
+
+    public void eliminar(View v) {
         Pizza p;
         p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
-        if(p!=null){
+        if (p != null) {
             AlertDialog.Builder ventana = new AlertDialog.Builder(this);
-            ventana.setTitle( getResources().getString(R.string.confirmacion));
+            ventana.setTitle(getResources().getString(R.string.confirmacion));
             ventana.setMessage(getResources().getString(R.string.pregunta1));
             ventana.setPositiveButton(getResources().getString(R.string.confirmar), new DialogInterface.OnClickListener() {
                 @Override
@@ -209,74 +216,104 @@ public class Pedido extends AppCompatActivity {
         Pizza p;
         String ingredientess, tamanoPizza = "";
         int t;
+        if (!cajapedido.getText().toString().isEmpty()) {
+            p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
+            if (p != null)
+                tamanoPizza = p.getTamaño().toString();
+            t = tamanopizza(tamanoPizza);
+            sptamaño.setSelection(t);
+            
+            if (p.getBordequeso().toString().equals(getResources().getString(R.string.si)))
+                    rSi.setChecked(true);
+            else rNO.setChecked(true);
 
+            ingredientess = p.getIngredientes();
+            if (ingredientess.contains(getResources().getString(R.string.Champiñon)))
+                chkChampi.setChecked(true);
+            if (ingredientess.contains(getResources().getString(R.string.Salami)))
+                chkSalami.setChecked(true);
+            if (ingredientess.contains(getResources().getString(R.string.Piña)))
+                chkPiña.setChecked(true);
+            if (ingredientess.contains(getResources().getString(R.string.Chorizo)))
+                chkChorizo.setChecked(true);
+            if (ingredientess.contains(getResources().getString(R.string.Pepperoni)))
+                chkPeperoni.setChecked(true);
+            if (ingredientess.contains(getResources().getString(R.string.Jamon)))
+                chkJamon.setChecked(true);
+            if (ingredientess.contains(getResources().getString(R.string.Pollo)))
+                chkPollo.setChecked(true);
+        }else {
+            new AlertDialog.Builder(this).setMessage(getResources().getString(R.string.error3)).setCancelable(true).show();
+        }
 
-        p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
-        if (p != null)
-
-            tamanoPizza = p.getTamaño().toString();
-        t = tamanopizza(tamanoPizza);
-        sptamaño.setSelection(t);
-        if (p.getBordequeso().toString().equals(getResources().getString(R.string.si)))
-            rSi.setChecked(true);
-        else rNO.setChecked(true);
-
-        ingredientess = p.getIngredientes();
-        if (ingredientess.contains(getResources().getString(R.string.Champiñon)))
-            chkChampi.setChecked(true);
-        if (ingredientess.contains(getResources().getString(R.string.Salami)))
-            chkSalami.setChecked(true);
-        if (ingredientess.contains(getResources().getString(R.string.Piña)))
-            chkPiña.setChecked(true);
-        if (ingredientess.contains(getResources().getString(R.string.Chorizo)))
-            chkChorizo.setChecked(true);
-        if (ingredientess.contains(getResources().getString(R.string.Pepperoni)))
-            chkPeperoni.setChecked(true);
-        if (ingredientess.contains(getResources().getString(R.string.Jamon)))
-            chkJamon.setChecked(true);
-        if (ingredientess.contains(getResources().getString(R.string.Pollo)))
-            chkPollo.setChecked(true);
     }
-}
-/*
+
     public void modificar(View v) {
         Pizza p, p2;
-        String  bordequeso, ingredientes = "", tamanoPizza="";
-        int t,precio=0;
+        String bordequeso, ingredientes = "", tamanoPizza = "";
+        int t, precio = 0;
 
-        p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
-        if (p != null) {
-            tamanoPizza= p.getTamaño().toString();
-            t=tamanopizza(tamanoPizza);
-            sptamaño.setSelection(t);
-            if(rSi.isChecked()) bordequeso = getResources().getString(R.string.si);
-            else bordequeso = getResources().getString(R.string.no);
+
+
+            p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
+            if (p != null) {
+                t = tamanopizza(tamanoPizza);
                 sptamaño.setSelection(t);
+                tamanoPizza = p.getTamaño().toString();
+
+
+                if (tamanoPizza.equals(getResources().getString(R.string.Personal))) {
+                    precio += 1000;
+                } else if (tamanoPizza.equals(getResources().getString(R.string.Pequeña))) {
+                    precio += 6000;
+                } else if (tamanoPizza.equals(getResources().getString(R.string.Mediana))) {
+                    precio += 8000;
+                } else if (tamanoPizza.equals(getResources().getString(R.string.Grande))) {
+                    precio += 10000;
+                } else if (tamanoPizza.equals(getResources().getString(R.string.Jumbo))) {
+                    precio += 20000;
+                }
+
+                if (rSi.isChecked()) {
+                    bordequeso = getResources().getString(R.string.si);
+                    precio += 2000;
+                } else {
+                    bordequeso = getResources().getString(R.string.no);
+                }
+
                 if (chkJamon.isChecked()) {
                     ingredientes = getResources().getString(R.string.Jamon) + ", ";
+                    precio += 500;
                 }
                 if (chkPollo.isChecked()) {
                     ingredientes = ingredientes + getResources().getString(R.string.Pollo) + ", ";
+                    precio += 1000;
                 }
 
                 if (chkChorizo.isChecked()) {
                     ingredientes = ingredientes + getResources().getString(R.string.Chorizo) + ", ";
+                    precio += 500;
+
                 }
                 if (chkChampi.isChecked()) {
                     ingredientes = ingredientes + getResources().getString(R.string.Champiñon) + ", ";
+                    precio += 500;
                 }
                 if (chkPeperoni.isChecked()) {
                     ingredientes = ingredientes + getResources().getString(R.string.Pepperoni) + ", ";
+                    precio += 500;
                 }
                 if (chkPiña.isChecked()) {
                     ingredientes = ingredientes + getResources().getString(R.string.Piña) + ", ";
+                    precio += 300;
                 }
                 if (chkSalami.isChecked()) {
                     ingredientes = ingredientes + getResources().getString(R.string.Salami) + ", ";
+                    precio += 500;
                 }
 
                 ingredientes = ingredientes.substring(0, ingredientes.length() - 6);
-                p2 = new Pizza(p.getFoto(), p.getPedido(), bordequeso, tamanoPizza, ingredientes,precio);
+                p2 = new Pizza(p.getFoto(), p.getPedido(), precio, tamanoPizza, ingredientes, bordequeso);
                 p2.modificar(getApplicationContext());
 
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.modif),
@@ -285,9 +322,10 @@ public class Pedido extends AppCompatActivity {
 
                 limpiar();
 
+            }
         }
     }
 
 
 
-    */
+

@@ -36,6 +36,8 @@
     <string name="pedido">Pedido</string>
     <string name="error1">Seleccione por lo menos un opcion</string>
     <string name="error2">Seleccione por lo menos un ingrediente</string>
+    <string name="error3">Digite Pedido a buscar</string>
+    <string name="error4">Pizza No Encontrada</string>
     <string name="errorLogin">Usuario o Contraseña Incorrectos</string>
     <string name="success">Pizza Guardada Satisfactoriamente</string>
     <string name="modif">Pizza Modificada Satiscatoriamente</string>
