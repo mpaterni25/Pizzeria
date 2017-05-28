@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 
 public class PizzeriaSQLiteOpenHelper extends SQLiteOpenHelper {
-    private String sql = "CREATE TABLE Pizzas(foto text, precio text,pedido text, tamaño text, ingredientes text, bordedequeso text)";
+    private String sql = "CREATE TABLE Pizzas(foto text, pedido text ,precio text, tamaño text, ingredientes text, bordedequeso text)";
 
     public PizzeriaSQLiteOpenHelper(Context contexto, String name, SQLiteDatabase.CursorFactory factory, int version){
         super(contexto, name, factory,version);

@@ -46,6 +46,8 @@
     <string name="cancelar">Cancelar</string>
     <string name="buscar">Buscar</string>
     <string name="modificar">Modificar</string>
+    <string name="eliminar">Eliminar</string>
+
 
 
     <string-array name="tamaño_spinner">

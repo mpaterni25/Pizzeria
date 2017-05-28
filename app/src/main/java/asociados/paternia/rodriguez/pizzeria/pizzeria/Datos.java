@@ -18,7 +18,7 @@ public class Datos {
         int precio;
         Pizza p;
         //Abrir conexión de lectura
-        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,1);
+        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,2);
         db = aux.getReadableDatabase();
 
         //Cursor
@@ -30,13 +30,13 @@ public class Datos {
             do{
                 foto = c.getString(0);
                 pedido = c.getString(1);
-                tamaño =c.getString(2);
-                ingredientes = c.getString(3);
-                bordedequeso = c.getString(4);
-                precio = Integer.parseInt(c.getString(5));
+                precio = Integer.parseInt(c.getString(2));
+                tamaño =c.getString(3);
+                ingredientes = c.getString(4);
+                bordedequeso = c.getString(5);
 
 
-                p = new Pizza(foto,pedido,tamaño,ingredientes,bordedequeso,precio);
+                p = new Pizza(foto,pedido,precio,tamaño,ingredientes,bordedequeso);
                 pizzas.add(p);
 
             }while (c.moveToNext());
@@ -48,7 +48,7 @@ public class Datos {
 
     }
 
-    public static Pizza buscarPizza(Context contexto, String ced){
+    public static Pizza buscarPizza(Context contexto, String ped){
 
 
         //Declarar variables
@@ -57,23 +57,23 @@ public class Datos {
         int precio;
         Pizza p=null;
         //Abrir conexión de lectura
-        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,1);
+        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,2);
         db = aux.getReadableDatabase();
 
         //Cursor
-        sql ="select * from Pizzas where pedido ='"+ced+"'";
+        sql ="select * from Pizzas where pedido ='"+ped+"'";
         Cursor c = db.rawQuery(sql,null);
 
         //Recorrido del cursor
         if(c.moveToFirst()){
-                foto = c.getString(0);
-                pedido = c.getString(1);
-                tamaño =c.getString(2);
-                ingredientes = c.getString(3);
-                bordedequeso = c.getString(4);
-                precio = Integer.parseInt(c.getString(5));
+            foto = c.getString(0);
+            pedido = c.getString(1);
+            precio = Integer.parseInt(c.getString(2));
+            tamaño =c.getString(3);
+            ingredientes = c.getString(4);
+            bordedequeso = c.getString(5);
 
-            p = new Pizza(foto,pedido,tamaño,ingredientes,bordedequeso,precio);
+            p = new Pizza(foto,pedido,precio,tamaño,ingredientes,bordedequeso);
         }
 
         db.close();

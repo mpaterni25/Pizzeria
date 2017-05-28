@@ -38,7 +38,7 @@ public class AdaptadorPizza extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //Declarar Variable
-        TextView cajaTamaño,cajaPrecio,cajaIngredientes;
+        TextView cajaTamaño,cajaPrecio,cajaIngredientes,cajaPedido;
         ImageView foto;
         LayoutInflater inflater;
         View itemView;
@@ -51,14 +51,16 @@ public class AdaptadorPizza extends BaseAdapter {
         cajaTamaño= (TextView)itemView.findViewById(R.id.txtTamañoP);
         cajaPrecio=(TextView)itemView.findViewById(R.id.txtPrecioP);
         cajaIngredientes=(TextView)itemView.findViewById(R.id.txtIngredientesP);
+        cajaPedido = (TextView)itemView.findViewById(R.id.txtPedidoP);
         foto = (ImageView)itemView.findViewById(R.id.imgFoto);
 
         //Pasar la información
 
         foto.setImageResource(Integer.parseInt(pizzas.get(position).getFoto()));
         cajaTamaño.setText(pizzas.get(position).getTamaño());
-        cajaPrecio.setText(pizzas.get(position).getTamaño());
+        cajaPrecio.setText(String.valueOf(pizzas.get(position).getPrecio()));
         cajaIngredientes.setText(pizzas.get(position).getIngredientes());
+        cajaPedido.setText(pizzas.get(position).getPedido());
 
         //Retornar el itemview
 

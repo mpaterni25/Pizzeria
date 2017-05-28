@@ -18,26 +18,36 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/editText"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/pedido" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/txtPedido"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/pedido"
+                    android:inputType="number" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="buscar"
+                    android:text="@string/buscar" />
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/txtPedido"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/Tamaño" />
+                android:text="@string/Tamaño"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/tamañoSp"
@@ -47,16 +57,13 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/editText3" />
 
-            <EditText
-                android:id="@+id/editText4"
+            <TextView
+                android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tamañoSp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/Ingredientes" />
+                android:text="@string/Ingredientes"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <CheckBox
                 android:id="@+id/chkSalami"
@@ -158,14 +165,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="guardar"
                         android:text="@string/Registrar" />
 
                     <Button
-                        android:id="@+id/button4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/buscar" />
+                        android:onClick="eliminar"
+                        android:text="@string/eliminar" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -186,6 +195,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:onClick="limpiar"
                         android:text="@string/Limpiar" />
                 </LinearLayout>
 

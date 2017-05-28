@@ -12,20 +12,34 @@
             android:id="@+id/imgFoto"
             android:layout_width="115dp"
             android:layout_height="115dp"
-            app:srcCompat="@drawable/pizza2" />
+            app:srcCompat="@drawable/pizza2"
+            android:layout_alignBottom="@+id/txtPedidoP" />
 
         <TextView
-            android:text="TextView"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtTamañoP"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="36dp"
             android:layout_marginStart="36dp"
             android:layout_marginTop="30dp"
-            android:id="@+id/txtTamañoP"
-            android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/imgFoto"
-            android:textStyle="normal|bold"
-            android:textSize="24sp" />
+            android:text="TextView"
+            android:textColor="?android:attr/colorPrimaryDark"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:id="@+id/txtPrecioP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/txtTamañoP"
+            android:layout_alignStart="@+id/txtTamañoP"
+            android:layout_below="@+id/txtTamañoP"
+            android:text="TextView"
+            android:textColor="?android:attr/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/txtIngredientesP"
@@ -35,18 +49,20 @@
             android:layout_alignStart="@+id/txtPrecioP"
             android:layout_below="@+id/txtPrecioP"
             android:text="TextView"
+            android:textColor="?android:attr/colorPrimaryDark"
             android:textSize="18sp"
             android:textStyle="normal|bold" />
 
         <TextView
-            android:text="TextView"
+            android:id="@+id/txtPedidoP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtPrecioP"
+            android:layout_alignLeft="@+id/txtIngredientesP"
+            android:layout_alignStart="@+id/txtIngredientesP"
+            android:layout_below="@+id/txtIngredientesP"
+            android:text="TextView"
+            android:textColor="?android:attr/colorPrimaryDark"
             android:textSize="18sp"
-            android:textStyle="normal|bold"
-            android:layout_alignLeft="@+id/txtTamañoP"
-            android:layout_alignStart="@+id/txtTamañoP"
-            android:layout_below="@+id/txtTamañoP" />
+            android:textStyle="normal|bold" />
     </RelativeLayout>
 </LinearLayout>

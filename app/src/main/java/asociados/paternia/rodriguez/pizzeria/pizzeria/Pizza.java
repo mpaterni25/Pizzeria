@@ -12,18 +12,18 @@ public class Pizza
     private String pedido;
     private int precio;
 
-    public Pizza(String foto, String tamaño, String ingredientes, String bordequeso, String pedido, int precio) {
+    public Pizza(String foto,String pedido, int precio, String tamaño, String ingredientes, String bordequeso) {
         this.foto = foto;
+        this.pedido = pedido;
+        this.precio = precio;
         this.tamaño = tamaño;
         this.ingredientes = ingredientes;
         this.bordequeso = bordequeso;
-        this.pedido = pedido;
-        this.precio = precio;
+
+
     }
 
-    public int getPrecio() {
-        return precio;
-    }
+    public int getPrecio() {return precio;}
 
     public void setPrecio(int precio) {
         this.precio = precio;
@@ -45,9 +45,7 @@ public class Pizza
         this.tamaño = tamaño;
     }
 
-    public String getIngredientes() {
-        return ingredientes;
-    }
+    public String getIngredientes() {return ingredientes;}
 
     public void setIngredientes(String ingredientes) {
         this.ingredientes = ingredientes;
@@ -75,17 +73,17 @@ public class Pizza
         String sql;
 
         //Abrir la conexion de base datos en modo escritura
-        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,1);
+        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,2);
         db = aux.getWritableDatabase();
 
         //insertar forma 1
         sql = "INSERT INTO Pizzas values('"
                 +this.getFoto()+"','"
+                +this.getPedido()+"','"
+                +this.getPrecio()+"','"
                 +this.getTamaño()+"','"
                 +this.getIngredientes()+"','"
-                +this.getBordequeso()+"','"
-                +this.getPedido()+"',"
-                +this.getPrecio()+")";
+                +this.getBordequeso()+"')";
 
         db.execSQL(sql);
 
@@ -112,7 +110,7 @@ public class Pizza
         String sql;
 
         //Abrir la conexion de base datos en modo escritura
-        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,1);
+        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,2);
         db = aux.getWritableDatabase();
 
         sql = "DELETE FROM Pizzas where Pedido='"+this.getPedido()+"'";
@@ -127,7 +125,7 @@ public class Pizza
         String sql;
 
         //Abrir la conexion de base datos en modo escritura
-        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,1);
+        PizzeriaSQLiteOpenHelper aux = new PizzeriaSQLiteOpenHelper(contexto,"DBPizzas",null,2);
         db = aux.getWritableDatabase();
 
         //insertar forma 1
