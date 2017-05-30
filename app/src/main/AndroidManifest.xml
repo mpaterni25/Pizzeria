@@ -16,9 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".vacio"></activity>
-        <activity android:name=".Pedido"></activity>
-        <activity android:name=".Listado"></activity>
+        <activity android:name=".PrincipalPizza" />
+        <activity android:name=".Pedido" />
+        <activity android:name=".ListadoPizza" />
+        <activity android:name=".ListadoEmpleados" />
+        <activity android:name=".RegistarEmplados"></activity>
     </application>
 
 </manifest>

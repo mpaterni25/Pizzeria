@@ -9,12 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class Principal extends AppCompatActivity {
+public class PrincipalPizza extends AppCompatActivity {
+
 
     private ListView ls;
     private Resources res;
     private String[] opc;
     private Intent i;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +34,34 @@ public class Principal extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position){
                     case 0:
-                        i=new Intent(Principal.this,Pedido.class);
+                        i=new Intent(PrincipalPizza.this,Pedido.class);
                         startActivity(i);
                         break;
                     case 1:
-                        i=new Intent(Principal.this,Listado.class);
+                        i=new Intent(PrincipalPizza.this,ListadoPizza.class);
+                        startActivity(i);
+                        break;
+                    case 2:
+                        i=new Intent(PrincipalPizza.this,RegistarEmplados.class);
+                        startActivity(i);
+                        break;
+                    case 3:
+                        i=new Intent(PrincipalPizza.this,ListadoEmpleados.class);
+                        startActivity(i);
+                        break;
+                    case 4:
+                        i=new Intent(PrincipalPizza.this,LoginActivity.class);
+                        finish();
                         startActivity(i);
                         break;
                 }
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+
+    }
+
 }

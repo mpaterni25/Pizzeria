@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 
 
-public class Datos {
+public class DatosPizza {
 
     public static ArrayList<Pizza> traerPizzas(Context contexto){
         ArrayList<Pizza> pizzas = new ArrayList<>();

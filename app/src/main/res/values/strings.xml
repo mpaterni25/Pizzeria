@@ -29,6 +29,7 @@
     <string name="no">NO</string>
     <string name="registrar">Registar</string>
     <string name="listar">Listar</string>
+    <string name="empleados">Empleados</string>
     <string name="usuario">Usuario</string>
     <string name="contraseña">Contraseña</string>
     <string name="bienvenidos">Bienvenidos</string>
@@ -38,18 +39,32 @@
     <string name="error2">Seleccione por lo menos un ingrediente</string>
     <string name="error3">Digite Pedido a buscar</string>
     <string name="error4">Pizza No Encontrada</string>
+    <string name="error5">Digite la Cedula</string>
+    <string name="error6">Digite la Nombre</string>
+    <string name="error7">Digite la Apellido</string>
+    <string name="error8">Digite la Cedula</string>
     <string name="errorLogin">Usuario o Contraseña Incorrectos</string>
     <string name="success">Pizza Guardada Satisfactoriamente</string>
+    <string name="success1">Ha Ingresado Satisfactoriamente</string>
+    <string name="success2">Empleado Guardado Satisfactoriamente</string>
     <string name="modif">Pizza Modificada Satiscatoriamente</string>
+    <string name="modif1">Empleado Modificada Satiscatoriamente</string>
     <string name="confirmacion">Confirmacion</string>
     <string name="confirmar">Confirmar</string>
     <string name="pregunta1">¿Está seguro que desea eliminar esta Pizza?</string>
+    <string name="pregunta2">¿Está seguro que desea eliminar este Empleado?</string>
     <string name="eliminarP">Pizza Eliminada Satisfactoriamente</string>
+    <string name="eliminarE">Empleado Eliminada Satisfactoriamente</string>
     <string name="cancelar">Cancelar</string>
     <string name="buscar">Buscar</string>
     <string name="modificar">Modificar</string>
-    <string name="eliminar">Eliminar</string>
-
+    <string name="eliminar">eliminar</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Ferminino</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="cedula">Cedula</string>
+    <string name="sexo">Sexo</string>
 
 
     <string-array name="tamaño_spinner">
@@ -60,9 +75,18 @@
         <item>@string/Jumbo</item>
     </string-array>
 
+    <string name="salir">Salir</string>
+    <string name="registrar_pizza">Registrar Pizza</string>
+    <string name="listar_pizza">Listar Pizza</string>
+    <string name="registrar_empleados">Registrar Empleados</string>
+    <string name="listar_empleados">Listar Empleados</string>
+
     <string-array name="lstOpcion">
-        <item>@string/registrar</item>
-        <item>@string/listar</item>
+        <item>@string/registrar_pizza</item>
+        <item>@string/listar_pizza</item>
+        <item>@string/registrar_empleados</item>
+        <item>@string/listar_empleados</item>
+        <item>@string/salir</item>
     </string-array>
 
 </resources>

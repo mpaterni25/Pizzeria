@@ -45,7 +45,7 @@ public class AdaptadorPizza extends BaseAdapter {
 
         //Uso del Inflater
         inflater = (LayoutInflater)contexto.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        itemView = inflater.inflate(R.layout.item_personalizado,null);
+        itemView = inflater.inflate(R.layout.item_personalizado_pizza,null);
 
         //Capturar los objetos
         cajaTamaño= (TextView)itemView.findViewById(R.id.txtTamañoP);

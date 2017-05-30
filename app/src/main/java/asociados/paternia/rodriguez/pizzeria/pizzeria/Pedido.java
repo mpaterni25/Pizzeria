@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -54,7 +53,7 @@ public class Pedido extends AppCompatActivity {
     public boolean validarTodo() {
 
         if (cajapedido.getText().toString().isEmpty()) {
-            cajapedido.setError("Digite la cédula");
+            cajapedido.setError(getResources().getString(R.string.error5));
             cajapedido.requestFocus();
             return false;
         }
@@ -181,7 +180,7 @@ public class Pedido extends AppCompatActivity {
 
     public void eliminar(View v) {
         Pizza p;
-        p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
+        p = DatosPizza.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
         if (p != null) {
             AlertDialog.Builder ventana = new AlertDialog.Builder(this);
             ventana.setTitle(getResources().getString(R.string.confirmacion));
@@ -190,7 +189,7 @@ public class Pedido extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Pizza p;
-                    p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
+                    p = DatosPizza.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
 
                     p.eliminar(getApplicationContext());
                     limpiar();
@@ -217,7 +216,7 @@ public class Pedido extends AppCompatActivity {
         String ingredientess, tamanoPizza = "";
         int t;
         if (!cajapedido.getText().toString().isEmpty()) {
-            p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
+            p = DatosPizza.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
             if (p != null)
                 tamanoPizza = p.getTamaño().toString();
             t = tamanopizza(tamanoPizza);
@@ -255,7 +254,7 @@ public class Pedido extends AppCompatActivity {
 
 
 
-            p = Datos.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
+            p = DatosPizza.buscarPizza(getApplicationContext(), cajapedido.getText().toString());
             if (p != null) {
                 t = tamanopizza(tamanoPizza);
                 sptamaño.setSelection(t);
