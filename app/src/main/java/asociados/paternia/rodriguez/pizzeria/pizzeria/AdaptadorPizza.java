@@ -54,6 +54,9 @@ public class AdaptadorPizza extends BaseAdapter {
         cajaPedido = (TextView)itemView.findViewById(R.id.txtPedidoP);
         foto = (ImageView)itemView.findViewById(R.id.imgFoto);
 
+
+
+
         //Pasar la información
 
         foto.setImageResource(Integer.parseInt(pizzas.get(position).getFoto()));
@@ -61,6 +64,7 @@ public class AdaptadorPizza extends BaseAdapter {
         cajaPrecio.setText(String.valueOf(pizzas.get(position).getPrecio()));
         cajaIngredientes.setText(pizzas.get(position).getIngredientes());
         cajaPedido.setText(pizzas.get(position).getPedido());
+
 
         //Retornar el itemview
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pizzeria</string>
+    <string name="app_name">Pizza Now</string>
     <string name="Opciones">Opciones</string>
     <string name="Ingredientes">INGREDIENTES</string>
     <string name="Tamaño">Tamaño</string>
@@ -14,7 +14,7 @@
     <string name="Pollo">Pollo</string>
     <string name="Butifarra">Butifarra</string>
     <string name="Chorizo">Chorizo</string>
-    <string name="Tocineta">Tocineta</string>
+    <string name="Tocineta">Toineta</string>
     <string name="Pepperoni">Pepperoni</string>
     <string name="Personal">Personal</string>
     <string name="Pequeña">Pequeña</string>
@@ -40,8 +40,8 @@
     <string name="error3">Digite Pedido a buscar</string>
     <string name="error4">Pizza No Encontrada</string>
     <string name="error5">Digite la Cedula</string>
-    <string name="error6">Digite la Nombre</string>
-    <string name="error7">Digite la Apellido</string>
+    <string name="error6">Digite el Nombre</string>
+    <string name="error7">Digite el Apellido</string>
     <string name="error8">Digite la Cedula</string>
     <string name="errorLogin">Usuario o Contraseña Incorrectos</string>
     <string name="success">Pizza Guardada Satisfactoriamente</string>
@@ -60,7 +60,7 @@
     <string name="modificar">Modificar</string>
     <string name="eliminar">eliminar</string>
     <string name="masculino">Masculino</string>
-    <string name="femenino">Ferminino</string>
+    <string name="femenino">Femenino</string>
     <string name="nombre">Nombre</string>
     <string name="apellido">Apellido</string>
     <string name="cedula">Cedula</string>

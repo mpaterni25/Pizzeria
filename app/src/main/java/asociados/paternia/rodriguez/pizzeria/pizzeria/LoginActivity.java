@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         tusuario = user.getText().toString();
         tpassword = pas.getText().toString();
 
-        if (tusuario.equals("admin") && tpassword.equals("admin")) {
+        if (tusuario.equals("Admin") && tpassword.equals("admin")) {
             Intent i = new Intent(LoginActivity.this, PrincipalPizza.class);
             user.setText("");
             pas.setText("");
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-        }if (tusuario.equals("user") && tpassword.equals("12345")) {
+        }if (tusuario.equals("User") && tpassword.equals("12345")) {
             Intent i = new Intent(LoginActivity.this, Pedido.class);
             user.setText("");
             pas.setText("");
